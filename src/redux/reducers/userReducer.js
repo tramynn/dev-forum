@@ -1,4 +1,3 @@
-import axios from "axios";
 import Axios from "axios";
 
 // initialState
@@ -41,7 +40,7 @@ export function logoutUser() {
 }
 
 export default function reducer(state = initialState, action) {
-  const { type, action } = action;
+  const { type, payload } = action;
   switch (type) {
     case GET_SESSION:
       return {

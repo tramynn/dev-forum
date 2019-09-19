@@ -1,14 +1,37 @@
 import React from "react";
 import "./Header.css";
+import { connect } from "react-redux";
+import { getSession } from "../../redux/reducers/userReducer";
 
-function Header() {
-  return (
-    <div>
-      <div id="Header">
-        <h1>Header</h1>
+class Header extends React.Component {
+  componentDidMount() {
+    // invoke methods!
+    this.props.getSession();
+  }
+
+  render() {
+    const { firstName } = this.props;
+
+    return (
+      <div>
+        <div id="Header">
+          <h1>Dev Forum</h1>
+          <h4>Hello, {firstName ? firstName : "Guest"}</h4>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Header;
+const mapStateToProps = reduxState => {
+  return {
+    firstName: reduxState.userReducer.firstName
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {
+    getSession
+  }
+)(Header);
