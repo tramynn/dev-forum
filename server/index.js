@@ -14,10 +14,10 @@ app.post("/auth/logout", authController.logout);
 // forum endpoints
 
 // post endpoints
-app.get("/api/forums");
-app.get("/api/posts/:topic");
-app.post("/api/posts/:topic");
-app.delete("/api/posts/:id");
+app.get("/api/forums", postsController.getForums);
+app.get("/api/posts/:topic", postsController.topics);
+app.post("/api/posts/:topic", postsController.addPost);
+app.delete("/api/posts/:id", postsController.deletePost);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on PORT: ${SERVER_PORT}`);
