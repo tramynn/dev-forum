@@ -14,8 +14,8 @@ app.post("/auth/logout", authController.logout);
 // forum endpoints
 
 // post endpoints
-app.get("/api/forums", postsController.getForums);
-app.get("/api/posts/:topic", postsController.topics);
+app.get("/api/topics", postsController.topics);
+app.get("/api/posts/:topic", postsController.posts);
 app.post("/api/posts/:topic", postsController.addPost);
 app.delete("/api/posts/:id", postsController.deletePost);
 
