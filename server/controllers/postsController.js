@@ -26,14 +26,14 @@ module.exports = {
 
       res.status(200).json(posts);
     }
-  },
-  deletePost: async (req, res) => {
-    // convert to number bc string
-    const { topicId, postId } = req.body;
-    const db = req.app.get("db");
-
-    const posts = await db.posts.deletePost(topicId, postId);
-
-    res.status(200).json(posts);
   }
+  // deletePost: async (req, res) => {
+  //   // convert to number bc string
+  //   const { topicId, postId } = req.body;
+  //   const db = req.app.get("db");
+
+  //   const posts = await db.posts.deletePost(topicId, postId);
+
+  //   res.status(200).json(posts);
+  // }
 };
