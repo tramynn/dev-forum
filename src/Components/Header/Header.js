@@ -11,12 +11,13 @@ class Header extends React.Component {
 
   render() {
     const { firstName } = this.props;
+    const alias = firstName ? firstName : "Guest";
 
     return (
       <div>
         <div id="Header">
           <h1>Dev Forum</h1>
-          <h4>Hello, {firstName ? firstName : "Guest"}</h4>
+          <h4>Hello, {alias}</h4>
         </div>
       </div>
     );

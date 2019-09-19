@@ -3,7 +3,7 @@ import "./Posts.css";
 
 function Posts() {
   return (
-    <div>
+    <div id="Posts" className="views">
       <h1>Posts</h1>
     </div>
   );

@@ -6,7 +6,11 @@ export class AddPost extends Component {
     this.state = {};
   }
   render() {
-    return <div></div>;
+    return (
+      <div id="AddPost">
+        <h1>Add Post</h1>
+      </div>
+    );
   }
 }
 
