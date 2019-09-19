@@ -35,9 +35,9 @@ app.post("/auth/logout", authController.logout);
 
 // post endpoints
 app.get("/api/topics", postsController.topics);
-app.get("/api/posts/:topic", postsController.posts);
-app.post("/api/posts/:topic", postsController.addPost);
-app.delete("/api/posts/:id", postsController.deletePost);
+app.get("/api/posts/:topicId", postsController.posts);
+app.post("/api/posts", postsController.addPost);
+app.delete("/api/posts", postsController.deletePost);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on PORT: ${SERVER_PORT}`);

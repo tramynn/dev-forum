@@ -21,3 +21,22 @@ CREATE TABLE post (
 -- Add a user
 INSERT INTO devforumuser (first_name, username, hash)
 VALUES ('Tramy', 'user1', 'password')
+
+-- Hardcoded topics
+INSERT INTO topic (topic_name)
+VALUES ('Front-end'), ('Back-end'), ('Database');
+
+-- get all topics
+SELECT * FROM topic;
+
+-- get posts from topic
+SELECT * FROM post p
+INNER JOIN topic t
+ON p.topic_id = t.topic_id;
+
+-- DUMMY DATA for posts
+-- use single quotes bc double quotes will check for col
+INSERT INTO post (topic_id, user_id, user_post)
+VALUES (1, 3, 'First Post'),
+(2, 2, 'Hellurz'),
+(3, 1, 'Hungry all the time');
